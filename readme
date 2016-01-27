@@ -1,0 +1,25 @@
+execution command
+./SnorGen -p /data/2014-automaic_payload_extraction/SnorGen-4.0.0/A
+./SnorGen -p /data/2014-automaic_payload_extraction/data/A
+
+
+
+수행과정
+1. 전처리
+ - fwp파일을 읽어 hash에 저장 (hash, flowList, pktList)
+ - fwp를 sequence로 변환
+   - sequence(fileID, pktIDList, header, content(contentID, protocol, field, chatVector, location))에 payload 전체 복사
+
+
+   - filed별로 쪼개서 singlesequence에 저장
+   - sequence (fileID, pktIDList, header, content(contentID, protocol, field, chatVector, location))
+
+2. 싱글 content 추출
+  - sequence pattern algorithm
+  - trim under size
+  - remove suspects(sequenceID, sequeceOffset)
+  - location
+ 
+ 3. 헤더
+
+ 4. 분석률
